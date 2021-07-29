@@ -6,7 +6,7 @@ public class UserDTO {
 
 	private String name;
 	private String cpf;
-	private String endereco;
+	private String address;
 	private String email;
 	private String phone;
 	private Date registrationDate;
@@ -27,12 +27,12 @@ public class UserDTO {
 		this.cpf = cpf;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getEmail() {
