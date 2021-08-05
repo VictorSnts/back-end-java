@@ -9,7 +9,7 @@ import com.victor.java.backend.model.UserModel;
 public interface UserRepository extends JpaRepository<UserModel, Integer> {
 
 
-//	UserModel findByCpf(String cpf);
-//    List<UserModel> queryByNomeLike(String name);
+	UserModel findByCpf(String cpf);
+    List<UserModel> queryByNameLike(String name);
     
 }
