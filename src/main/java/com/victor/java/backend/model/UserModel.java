@@ -1,11 +1,20 @@
-package com.victor.java.backend.dto;
+package com.victor.java.backend.model;
 
 import java.util.Date;
 
-import com.victor.java.backend.model.UserModel;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class UserDTO {
+import com.victor.java.backend.dto.UserDTO;
 
+@Entity // Indica que essa classe é uma entidade do banco de dados
+public class UserModel {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Indica a forma em que o ID é gerado
+	private Integer id;
 	private String name;
 	private String cpf;
 	private String address;
@@ -61,16 +70,16 @@ public class UserDTO {
 		this.registrationDate = registrationDate;
 	}
 
-	
-	// Metodo para conversao de objetos do tipo UserModel para tipo UserDTO
-	public static UserDTO convert(UserModel userModel) {
-		UserDTO user = new UserDTO();
-        user.setName(userModel.getName());
-        user.setAddress(userModel.getAddress());
-        user.setCpf(userModel.getCpf());
-        user.setEmail(userModel.getEmail());
-        user.setPhone(userModel.getPhone());
-        user.setRegistrationDate(userModel.getRegistrationDate());
+	// Metodo para conversao de objetos do tipo UserDTO para tipo userModel
+	public static UserModel convert(UserDTO userDTO) {
+        UserModel user = new UserModel();
+        user.setName(userDTO.getName());
+        user.setAddress(userDTO.getAddress());
+        user.setCpf(userDTO.getCpf());
+        user.setEmail(userDTO.getEmail());
+        user.setPhone(userDTO.getPhone());
+        user.setRegistrationDate(userDTO.getRegistrationDate());
         return user;
-	}
+}
+	
 }

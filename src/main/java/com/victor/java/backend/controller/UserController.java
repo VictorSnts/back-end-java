@@ -63,7 +63,7 @@ public class UserController {
 		return users;
 	}
 
-	@GetMapping("/users/{cpf}") // faz com que o metodo a seguir seja executado no mapeamento /users/{cpf}
+	@GetMapping("/user/{cpf}") // faz com que o metodo a seguir seja executado no mapeamento /users/{cpf}
 	public UserDTO getUsersFilter(@PathVariable String cpf) { // @PathVariable pega um parametro da URI
 		for (UserDTO user : users) {
 			if (user.getCpf().equals(cpf))
