@@ -6,12 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.victor.java.backend.dto.UserDTO;
 
 @Entity // Indica que essa classe é uma entidade do banco de dados
-public class UserModel {
-	
+@Table(name="user", schema = "users")
+public class User {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Indica a forma em que o ID é gerado
 	private Integer id;
@@ -71,15 +73,15 @@ public class UserModel {
 	}
 
 	// Metodo para conversao de objetos do tipo UserDTO para tipo userModel
-	public static UserModel convert(UserDTO userDTO) {
-        UserModel user = new UserModel();
-        user.setName(userDTO.getName());
-        user.setAddress(userDTO.getAddress());
-        user.setCpf(userDTO.getCpf());
-        user.setEmail(userDTO.getEmail());
-        user.setPhone(userDTO.getPhone());
-        user.setRegistrationDate(userDTO.getRegistrationDate());
-        return user;
-}
-	
+	public static User convert(UserDTO userDTO) {
+		User user = new User();
+		user.setName(userDTO.getName());
+		user.setAddress(userDTO.getAddress());
+		user.setCpf(userDTO.getCpf());
+		user.setEmail(userDTO.getEmail());
+		user.setPhone(userDTO.getPhone());
+		user.setRegistrationDate(userDTO.getRegistrationDate());
+		return user;
+	}
+
 }

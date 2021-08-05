@@ -6,5 +6,6 @@ create table users.user (
 	cpf varchar(100) not null,
 	address varchar(100) not null,
 	email varchar(100) not null,
-	phone varchar(100) not null
+	phone varchar(100) not null,
+	registration_date timestamp not null
 );

@@ -4,12 +4,12 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.victor.java.backend.model.UserModel;
+import com.victor.java.backend.model.User;
 
-public interface UserRepository extends JpaRepository<UserModel, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
 
-	UserModel findByCpf(String cpf);
-    List<UserModel> queryByNameLike(String name);
+	User findByCpf(String cpf);
+    List<User> queryByNameLike(String name);
     
 }

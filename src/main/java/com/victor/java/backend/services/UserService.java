@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.victor.java.backend.dto.UserDTO;
-import com.victor.java.backend.model.UserModel;
+import com.victor.java.backend.model.User;
 import com.victor.java.backend.repositories.UserRepository;
 
 @Service // indica que esta é uma classe de servico
@@ -18,7 +18,7 @@ public class UserService {
 	private UserRepository userRepository;
 
 	public List<UserDTO> getAll() {
-		List<UserModel> users = userRepository.findAll();
+		List<User> users = userRepository.findAll();
 
 		// retorna uma lista que foi Transformada em um stream e foi chamado metodo map
 		// para transformar a lista de entidades em uma lista de DTOs
@@ -28,7 +28,7 @@ public class UserService {
 	}
 
 	public UserDTO findById(Integer userID) { // Busca o usuario por um id especifico
-		Optional<UserModel> userModel = userRepository.findById(userID);
+		Optional<User> userModel = userRepository.findById(userID);
 		if (userModel.isPresent()) {
 			return UserDTO.convert(userModel.get());
 		}
@@ -36,12 +36,12 @@ public class UserService {
 	}
 
 	public UserDTO save(UserDTO userDTO) { // Salva um usuario no banco de dados
-		UserModel userModel = userRepository.save(UserModel.convert(userDTO));
+		User userModel = userRepository.save(User.convert(userDTO));
 		return UserDTO.convert(userModel);
 	}
 	
 	public UserDTO delete(Integer userID) { // remove o usuario por um id especifico
-		Optional<UserModel> userModel = userRepository.findById(userID);
+		Optional<User> userModel = userRepository.findById(userID);
 		if (userModel.isPresent()) {
 			userRepository.delete(userModel.get());
 		}
@@ -49,15 +49,15 @@ public class UserService {
 	}
 	
 	public UserDTO findByCpf(String userCpf) { // busca o usuario por um cpf especifico
-		UserModel userModel = userRepository.findByCpf(userCpf);
-		if (!userModel.equals(null)) {
+		User userModel = userRepository.findByCpf(userCpf);
+		if (userModel != null) {
 			return UserDTO.convert(userModel);
 		}
 		return null;
 	}
 	
 	public List<UserDTO> qweryByName(String name) {
-		List<UserModel> users = userRepository.queryByNameLike(name);
+		List<User> users = userRepository.queryByNameLike(name);
 
 		// retorna uma lista que foi Transformada em um stream e foi chamado metodo map
 		// para transformar a lista de entidades em uma lista de DTOs

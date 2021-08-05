@@ -2,7 +2,7 @@ package com.victor.java.backend.dto;
 
 import java.util.Date;
 
-import com.victor.java.backend.model.UserModel;
+import com.victor.java.backend.model.User;
 
 public class UserDTO {
 
@@ -63,7 +63,7 @@ public class UserDTO {
 
 	
 	// Metodo para conversao de objetos do tipo UserModel para tipo UserDTO
-	public static UserDTO convert(UserModel userModel) {
+	public static UserDTO convert(User userModel) {
 		UserDTO user = new UserDTO();
         user.setName(userModel.getName());
         user.setAddress(userModel.getAddress());
