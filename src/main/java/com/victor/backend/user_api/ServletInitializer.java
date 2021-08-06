@@ -1,4 +1,4 @@
-package com.victor.java.backend;
+package com.victor.backend.user_api;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -1,8 +1,8 @@
-package com.victor.java.backend.dto;
+package com.victor.backend.user_api.dto;
 
 import java.util.Date;
 
-import com.victor.java.backend.model.User;
+import com.victor.backend.user_api.model.User;
 
 public class UserDTO {
 

@@ -1,4 +1,4 @@
-package com.victor.java.backend.services;
+package com.victor.backend.user_api.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.victor.java.backend.dto.UserDTO;
-import com.victor.java.backend.model.User;
-import com.victor.java.backend.repositories.UserRepository;
+import com.victor.backend.user_api.dto.UserDTO;
+import com.victor.backend.user_api.model.User;
+import com.victor.backend.user_api.repositories.UserRepository;
 
 @Service // indica que esta é uma classe de servico
 public class UserService {

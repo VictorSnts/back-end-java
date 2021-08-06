@@ -1,4 +1,4 @@
-package com.victor.java.backend.controller;
+package com.victor.backend.user_api.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.victor.java.backend.dto.UserDTO;
-import com.victor.java.backend.services.UserService;
+import com.victor.backend.user_api.dto.UserDTO;
+import com.victor.backend.user_api.services.UserService;
 
 @RestController // permite a criação de métodos que serão chamados via Web utilizando o
 				// protocolo HTTP.

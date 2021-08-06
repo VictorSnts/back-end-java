@@ -1,4 +1,4 @@
-package com.victor.java.backend.model;
+package com.victor.backend.user_api.model;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.victor.java.backend.dto.UserDTO;
+import com.victor.backend.user_api.dto.UserDTO;
 
 @Entity // Indica que essa classe é uma entidade do banco de dados
 @Table(name="user", schema = "users")

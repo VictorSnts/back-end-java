@@ -1,4 +1,4 @@
-package com.victor.java.backend;
+package com.victor.backend.user_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

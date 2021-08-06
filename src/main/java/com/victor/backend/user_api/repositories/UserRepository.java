@@ -1,10 +1,10 @@
-package com.victor.java.backend.repositories;
+package com.victor.backend.user_api.repositories;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.victor.java.backend.model.User;
+import com.victor.backend.user_api.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
