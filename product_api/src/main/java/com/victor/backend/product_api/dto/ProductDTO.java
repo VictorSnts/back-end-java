@@ -15,7 +15,7 @@ public class ProductDTO {
 	private String description;
 	@NotNull
 	private Float price;
-
+	@NotNull
 	private CategoryDTO category;
 
 	public String getProductIdentifier() {
